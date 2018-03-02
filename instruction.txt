@@ -1,0 +1,15 @@
+So I've used the pollution.csv as a dataset which around 43k rows.
+First it will create dataset.csv from pollution.csv and feed it in lstm network.
+lstm_reg.py will train network, which I've already did and save the model in same folder.
+predict.py will predict the humidity, temp, and ppm for next 100 hours by giving 100 input rows.
+Train, Validation and test data is splitted in 30k, 5k, and remaining respectively.
+lstm model is defind in lstm_model.py
+
+You need keras, tensorflow, pandas, sklearn. (if not installed the you have to install all these)
+
+To run:
+FILE_1: lstm_reg.py (Do not need to run again, I've did and saved results)
+python lstm_reg.py
+
+FILE_2: predict.py
+python predict.py
