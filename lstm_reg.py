@@ -13,6 +13,7 @@ from keras.models import Sequential
 from keras.layers import Dense, TimeDistributed, Input
 from keras.layers import LSTM
 from keras.models import Model
+from keras.callbacks import TensorBoard
 from keras.optimizers import Adam
 from keras import backend as K
 import tensorflow as tf
@@ -105,9 +106,13 @@ def main():
 	model = lstm_model.model_l()
 	optimizer = Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.1, amsgrad=False)
 	model.compile(loss='mae', optimizer=optimizer, metrics=['mae', 'acc'])
-	model.fit_generator(train_data_generator.generate(), 30, 50, validation_data=valid_data_generator.generate(), validation_steps=5)
+	tensorboard_callback = TensorBoard(log_dir='./tensorboard', histogram_freq=0, batch_size=200, write_graph=True, write_grads=True, 
+										write_images=False, embeddings_freq=1, embeddings_layer_names=['lstm1'], 
+										embeddings_metadata=None)
+	model.fit_generator(train_data_generator.generate(), 30, 50, validation_data=valid_data_generator.generate(), validation_steps=5,
+						callbacks=[tensorboard_callback])
 	#model.load_weights('lstm_reg.model', by_name=True)
-	model.save('lstm_reg.model')
+	model.save('final_lstm_reg.model')
 	print('MODEL SAVED!')
 
 

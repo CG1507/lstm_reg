@@ -66,7 +66,7 @@ def main():
 	scaled = scaler.fit_transform(values)
 
 	model = lstm_model.model_l()
-	model.load_weights('lstm_reg.model', by_name=True)
+	model.load_weights('final_lstm_reg.model', by_name=True)
 
 	x = np.zeros((1,100, 7))
 	c = 0

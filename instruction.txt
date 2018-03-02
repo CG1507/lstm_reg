@@ -8,8 +8,11 @@ lstm model is defind in lstm_model.py
 You need keras, tensorflow, pandas, sklearn. (if not installed the you have to install all these)
 
 To run:
-FILE_1: lstm_reg.py (Do not need to run again, I've did and saved results)
+FILE_1: lstm_reg.py (run again, to get the graphs)
 python lstm_reg.py
 
 FILE_2: predict.py
 python predict.py
+
+to see the graphs: open another cmd in same folder and copt paste in cmd and run then it shows the link and then go to that link in browser. you will get those graph
+tensorboard --logdir='./tensorboard'
