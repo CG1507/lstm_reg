@@ -7,6 +7,15 @@ from keras import backend as K
 import tensorflow as tf
 
 def model_l():
+	"""
+	LSTM regressor model definition
+
+	Args:
+		No arguments
+
+	retuns:
+		model [keras Model object]: keras model
+	"""
 	input_word = Input(batch_shape=(None, 100, 7), dtype='float32', name='input')
 	hidden_units1 = LSTM(units=250, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True,  
 					kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', 
