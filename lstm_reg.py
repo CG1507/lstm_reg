@@ -19,6 +19,15 @@ from keras import backend as K
 import tensorflow as tf
 
 def data_cleaning():
+	"""
+	Data cleaning function. It converts raw data to suitable form and save it in files.
+	
+	Args:
+		No arguments
+
+	Returns:
+		No returns
+	"""
 	reading_file_pointer = file_io.read_file('./pollution_new.csv')
 	writing_file_pointer = file_io.create_file('./dataset.csv')
 
