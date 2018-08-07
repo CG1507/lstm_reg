@@ -65,6 +65,15 @@ def data_cleaning():
 		file_io.write_line(writing_file_pointer, line)
 
 def main():
+	"""
+	Main test function.
+	
+	Args:
+		No arguments
+
+	Returns:
+		No returns
+	"""
 	data_cleaning()
 	
 	# load dataset
